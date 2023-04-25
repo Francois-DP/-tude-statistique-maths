@@ -20,7 +20,7 @@ div.title-container {
 }
 h1 {
     color: white;
-    background-color: blue;
+    background-color: var(--true-blue);
     padding: 10px 0px;
     border-radius: 20px;
 }
@@ -59,4 +59,55 @@ h5{
 
 h6{
     --font-size: .67em;
+}
+
+li>a{
+    color: var(--true-blue);
+    text-decoration: none;
+    position: relative;
+}
+
+li>a::after{
+    content:"";
+    position: absolute;
+    bottom:0;
+    left:0;
+    height: 0.125em;
+    width: 0;
+    background-color:var(--true-blue);
+    transition: all 0.6s;
+}
+li>a:hover::after{
+    width:100%;
+}
+
+.mainPage{
+    height: 100vh;
+    position: relative;
+}
+
+.scroll{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll>div{
+    height: 50px;
+    aspect-ratio: 1;
+    border-color: var(--black);
+    border-width: 0px 3px 3px 0px;
+    border-style: solid;
+    transform: rotate(45deg);
+    margin: -10px auto 0 auto;
+    animation: arrowMove 1s linear infinite;
+}
+
+@keyframes arrowMove {
+    0%   {transform: translateY(0%) rotate(45deg);}
+    25%  {transform: translateY(20%) rotate(45deg);}
+    50%  {transform: translateY(40%) rotate(45deg);}
+    75%  {transform: translateY(60%) rotate(45deg);}
+    100% {transform: translateY(0%) rotate(45deg);;}
 }
