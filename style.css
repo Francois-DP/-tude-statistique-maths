@@ -89,7 +89,7 @@ li>a:hover::after{
 .scroll{
     position: absolute;
     bottom: 100px;
-    left: 50%;
+    left: 70%;
     transform: translateX(-50%);
 }
 
@@ -100,7 +100,7 @@ li>a:hover::after{
     border-width: 0px 3px 3px 0px;
     border-style: solid;
     transform: rotate(45deg);
-    margin: -10px auto 0 auto;
+    margin: -30px auto 0 auto;
     animation: arrowMove 1s linear infinite;
 }
 
@@ -110,4 +110,37 @@ li>a:hover::after{
     50%  {transform: translateY(40%) rotate(45deg);}
     75%  {transform: translateY(60%) rotate(45deg);}
     100% {transform: translateY(0%) rotate(45deg);;}
+}
+
+.scroll>p{
+    --blurWidth: 0px;
+    box-shadow: 0px 0px var(--blurWidth) var(--apricot);
+    padding: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.2s linear;
+}
+
+.scroll>p:hover{
+    --blurWidth: 15px;
+}
+
+p.content{
+    margin: 25px;
+    padding: 15px;
+    background-color: var(--apricot);
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+img{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 40vh;
+    margin: 20px auto;
+}
+
+img#introImg{
+    left: 30%;
 }
